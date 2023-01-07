@@ -14,7 +14,7 @@ contract CoinFlipAttack {
     //not using new keyword because we want to use the same contract address and
     //not create a new instance of the contract
     constructor(address _victimContract) {
-        victimContract = CoinFlip(_victimContract);
+        victimContract = CoinFlip(_victimContract); // the right logic says that we need to use the same address as the victim contract
     }
 
 // This function flip is mimicking the flip function in the victim contract
@@ -29,3 +29,5 @@ contract CoinFlipAttack {
         return victimContract.flip(side);
     }
 }
+
+// CoinFlip(_victimContract) is the same as new CoinFlip() but we are using the same address as the victim contract

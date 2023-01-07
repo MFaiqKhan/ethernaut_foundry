@@ -30,6 +30,7 @@ We will make an attacker Contract, which will first call the flip function in it
 
 we have to change thw owner, here tx.origin shouldn't be equal to owner and only then we can change the owner.
 tx.origin will only be account address, on the other hand msg.sender can also be a contract address. 
-
+tx.origin can be vulnerable when using in authentication, as it can be spoofed by a contract in phishing attack.
+In this contract what we will do is we will make another contract and call the changeOwner function from different account by putting player address as the argument, so we can change the owner and get the flag.
 
 
